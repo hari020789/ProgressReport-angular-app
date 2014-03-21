@@ -1,0 +1,39 @@
+<div class="full-container">
+
+
+    <div class="wrap-form">
+      <form name='theForm' class="mark-list" novalidate>
+        
+      <div class="content">
+       <label class="mechanics">MATHS</label>
+       <input type='text' name='mechanics' ng-model='mechanics' class='subject-entry' ng-maxlength='2' ng-pattern='/^[0-9]+$/'/required ></br>
+        <span ng-show='theForm.mechanics.$error.pattern'>Field can contain only digits</span> 
+        <span ng-show='mechanics.length<1'>Field must contain a value</span> 
+          <span ng-show='theForm.mechanics.$error.maxlength'>Max marks is 99</span>
+        </div>
+        <div class="content">
+        <label class="graphics">NETWORK THEORY</label>
+      <input type='text' name='graphics' ng-model='graphics' class='subject-entry' ng-maxlength='2' ng-pattern='/^[0-9]+$/'/> 
+        <span ng-show='theForm.graphics.$error.pattern'>Field can contain only digits</span></br>
+        <span ng-show='graphics.length<1'>Field must contain a value</span> 
+        <span ng-show='theForm.graphics.$error.maxlength'>Max marks is 99</span>
+        </div>
+        <div class="content">
+        <label class="maths">ELECTRICAL TECNOLOGY</label>
+       <input type='text' name='maths' ng-model='maths' class='subject-entry' ng-maxlength='2' ng-pattern='/^[0-9]+$/'/> 
+        <span ng-show='theForm.maths.$error.pattern'>Field can contain only digits</span></br>
+        <span ng-show='maths.length<1'>Field must contain a value</span> 
+           <span ng-show='theForm.maths.$error.maxlength'>Max marks is 99</span>
+           </div>
+        <div class="total">
+          <label>Total  Marks</label>
+          <input type="text" id="value"value="{{total()}}"/>
+        </div>
+        <span class="result-bar">
+    <p ng-model="grade" id="grade-text"> Your Grade is <span>{{grade}}</span></p> 
+    <p ng-model="result" id="result-text"> Your Result is <span>{{result}}</span></p>
+  </span>       
+    </form>
+     
+  </div>
+   </div>

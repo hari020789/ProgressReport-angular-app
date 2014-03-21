@@ -1,0 +1,53 @@
+<html ng-app ="mainModule">  
+  <head>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="http://code.angularjs.org/1.0.5/angular.min.js"></script> 
+      <script type="text/javascript" src = "js/math.js"> </script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  
+  <body ng-Controller="TodoCtrl">
+  <div>
+    <div class="student-details">
+      <div class="wrap-marks">
+        <span>
+          <form name='theForm' novalidate>
+            <label>Enter Roll Number</label>
+          <input type='text' name='studentnumber' ng-model='studentnumber' class='subject-entry' ng-pattern='/^[0-9]+$/'/required ></br>
+        <span ng-show='theForm.studentnumber.$error.pattern'>Field can contain only digits</span> 
+        <span ng-show='studentnumber.length<1'>Field must contain a value</span> 
+         
+           </form>  
+      </span>
+    <h2> Student Name is <input type ="text" ng-model="selectedstudent"></h2>
+  </div>
+</div>
+<img src="images/arrow.png"/>
+
+  <p class="marks-scored">Marks Scored</p>
+
+  <span class="branch-details">
+    <ul class="nav">
+                <li><a href="#mechanical"> MECHANICAL </a></li>
+                <li><a href="#computerscience"> CSE </a></li>
+                <li><a href="#civil"> CIVIL </a></li>
+                <li><a href="#electronics"> ECE </a></li>
+            </ul>
+  </span>
+ <div class="ng-view"></div>
+ <button ng-click="addMarks()">Add Details!</button>
+     <input type="text" ng-model="search" placeholder="search"/> 
+     <span>
+    
+        <span id="student-field" ng-repeat="marks in subjects | filter:search">
+             
+             <a class="student-number">{{ marks.selected_number }}</a>
+             <a class="student-name">{{ marks.selected_student }}</a>
+
+        </span>
+     
+  </span>
+        </div>   
+  </body>
+
+</html>
